@@ -19,8 +19,8 @@ class baseMarcher
 {
 public:
   baseMarcher(double *phi,      double *dx,  long *flag,
-              double *distance, int ndim,    int *shape,
-              bool self_test,   int order,   double narrow,
+              double *distance, int* nearest_contour, int ndim,
+              int *shape, bool self_test, int order, double narrow,
               int periodic);
 
   virtual          ~baseMarcher();
@@ -94,6 +94,7 @@ protected:
   double          * distance_; // return value modified in place
   double          * phi_;
   double          * dx_;
+  int             * nearest_contour_;
   long            * flag_;
   int               error_;
   int               dim_;            // number of dimensions
